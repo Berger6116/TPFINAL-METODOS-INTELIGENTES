@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3j3l5kaxkovx"
-path="res://.godot/imported/Garden_Planters_PlasticBucket.png-6b32a1741123f7e867f7873a3b1363ab.ctex"
+uid="uid://bcsb5wmf7ajjo"
+path="res://.godot/imported/Ants.png-061eedb54d70024706e12e1e2656b753.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Garden_Planters/Garden_Planters_PlasticBucket.png"
-dest_files=["res://.godot/imported/Garden_Planters_PlasticBucket.png-6b32a1741123f7e867f7873a3b1363ab.ctex"]
+source_file="res://JUEGO/Recursos/NPCs/Ants.png"
+dest_files=["res://.godot/imported/Ants.png-061eedb54d70024706e12e1e2656b753.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2lbs6rebve5u"
-path="res://.godot/imported/Garden_Planters_PlantBases.png-72c1a692c253aa04f4b5aac9eeb8334a.ctex"
+uid="uid://pwyyafluge0s"
+path="res://.godot/imported/taiga_ [resources].png-f629a8d30eb3ccea44e21330027ed4f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Garden_Planters/Garden_Planters_PlantBases.png"
-dest_files=["res://.godot/imported/Garden_Planters_PlantBases.png-72c1a692c253aa04f4b5aac9eeb8334a.ctex"]
+source_file="res://JUEGO/Recursos/Taiga/taiga_ [resources].png"
+dest_files=["res://.godot/imported/taiga_ [resources].png-f629a8d30eb3ccea44e21330027ed4f7.ctex"]
 
 [params]
 

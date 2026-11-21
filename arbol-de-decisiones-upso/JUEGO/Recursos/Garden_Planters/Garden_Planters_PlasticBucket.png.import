@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v5vrfjkoyiyb"
-path="res://.godot/imported/Garden_Planters_BlueBarrel.png-db83ba67f544c98c09c94b85fb3885d1.ctex"
+uid="uid://c3j3l5kaxkovx"
+path="res://.godot/imported/Garden_Planters_PlasticBucket.png-af9511fcb64882acfe0650cfac028bf4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Garden_Planters/Garden_Planters_BlueBarrel.png"
-dest_files=["res://.godot/imported/Garden_Planters_BlueBarrel.png-db83ba67f544c98c09c94b85fb3885d1.ctex"]
+source_file="res://JUEGO/Recursos/Garden_Planters/Garden_Planters_PlasticBucket.png"
+dest_files=["res://.godot/imported/Garden_Planters_PlasticBucket.png-af9511fcb64882acfe0650cfac028bf4.ctex"]
 
 [params]
 

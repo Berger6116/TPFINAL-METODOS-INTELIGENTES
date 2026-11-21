@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn1p5aylm5j2d"
-path="res://.godot/imported/Garden_Planters_OilBarrel.png-91f03f3b83213e3c74756a297cbdde4d.ctex"
+uid="uid://cx5xot1mhrkh8"
+path="res://.godot/imported/taiga_.png-16f32c4aa63857f9c396190093966241.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Garden_Planters/Garden_Planters_OilBarrel.png"
-dest_files=["res://.godot/imported/Garden_Planters_OilBarrel.png-91f03f3b83213e3c74756a297cbdde4d.ctex"]
+source_file="res://JUEGO/Recursos/Taiga/taiga_.png"
+dest_files=["res://.godot/imported/taiga_.png-16f32c4aa63857f9c396190093966241.ctex"]
 
 [params]
 

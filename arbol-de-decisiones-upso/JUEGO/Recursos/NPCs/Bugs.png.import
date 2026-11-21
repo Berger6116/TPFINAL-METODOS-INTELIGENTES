@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccgk6qph8l3c2"
-path="res://.godot/imported/Garden_Planters_RubberTire.png-a28209c9841816e64f3471a4cce35888.ctex"
+uid="uid://cq81qhn3eh3ck"
+path="res://.godot/imported/Bugs.png-2102774861b523233902db5f5546400f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Garden_Planters/Garden_Planters_RubberTire.png"
-dest_files=["res://.godot/imported/Garden_Planters_RubberTire.png-a28209c9841816e64f3471a4cce35888.ctex"]
+source_file="res://JUEGO/Recursos/NPCs/Bugs.png"
+dest_files=["res://.godot/imported/Bugs.png-2102774861b523233902db5f5546400f.ctex"]
 
 [params]
 

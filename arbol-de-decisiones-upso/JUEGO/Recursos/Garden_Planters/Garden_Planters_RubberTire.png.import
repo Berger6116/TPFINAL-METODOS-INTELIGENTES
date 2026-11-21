@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ceb5h6o4fhofd"
-path="res://.godot/imported/Garden_Planters_16x16Icons.png-c6ae5ced01a3a6361e1c049bb227e86d.ctex"
+uid="uid://ccgk6qph8l3c2"
+path="res://.godot/imported/Garden_Planters_RubberTire.png-70e1dcba522dcdd289dfef3ac888552c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Garden_Planters/Garden_Planters_16x16Icons.png"
-dest_files=["res://.godot/imported/Garden_Planters_16x16Icons.png-c6ae5ced01a3a6361e1c049bb227e86d.ctex"]
+source_file="res://JUEGO/Recursos/Garden_Planters/Garden_Planters_RubberTire.png"
+dest_files=["res://.godot/imported/Garden_Planters_RubberTire.png-70e1dcba522dcdd289dfef3ac888552c.ctex"]
 
 [params]
 
