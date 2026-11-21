@@ -1,6 +1,7 @@
 [gd_resource type="BehaviorTree" format=3 uid="uid://bpdm5jnegi38"]
 
 [ext_resource type="Script" uid="uid://ccr43pgd4488l" path="res://demo/ai/tasks/get_first_in_group.gd" id="1_2jpsu"]
+[ext_resource type="Script" uid="uid://c6vvwf2uo583n" path="res://demo/ai/tasks/task_01.gd" id="1_36cux"]
 [ext_resource type="Script" uid="uid://dcjgktglb1slf" path="res://demo/ai/tasks/pursue.gd" id="2_h5db5"]
 [ext_resource type="Script" uid="uid://dbo0kq2cwb4qv" path="res://demo/ai/tasks/face_target.gd" id="3_bpmfp"]
 
@@ -37,25 +38,41 @@ var/var5/hint = 0
 var/var5/hint_string = ""
 
 [sub_resource type="BBNode" id="BBNode_nrd4b"]
-resource_name = "AnimationPlayer"
 saved_value = NodePath("AnimationPlayer")
+resource_name = "AnimationPlayer"
+
+[sub_resource type="BBNode" id="BBNode_vamt0"]
+saved_value = NodePath("AnimationPlayer")
+resource_name = "AnimationPlayer"
+
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_36cux"]
+animation_player = SubResource("BBNode_vamt0")
+animation_name = &"idle"
 
 [sub_resource type="BTPlayAnimation" id="BTPlayAnimation_qiw21"]
 animation_player = SubResource("BBNode_nrd4b")
 animation_name = &"idle"
 blend = 0.1
+children = [SubResource("BTPlayAnimation_36cux")]
+
+[sub_resource type="BTWait" id="BTWait_v2uy1"]
+
+[sub_resource type="BTAction" id="BTAction_mimai"]
+children = [SubResource("BTWait_v2uy1")]
+script = ExtResource("1_36cux")
 
 [sub_resource type="BTRandomWait" id="BTRandomWait_xlud8"]
 min_duration = 0.7
 max_duration = 1.5
+children = [SubResource("BTAction_mimai")]
 
 [sub_resource type="BTSequence" id="BTSequence_yhjh1"]
 custom_name = "Pause before action"
 children = [SubResource("BTPlayAnimation_qiw21"), SubResource("BTRandomWait_xlud8")]
 
 [sub_resource type="BBNode" id="BBNode_wpj6d"]
-resource_name = "AnimationPlayer"
 saved_value = NodePath("AnimationPlayer")
+resource_name = "AnimationPlayer"
 
 [sub_resource type="BTPlayAnimation" id="BTPlayAnimation_olf37"]
 animation_player = SubResource("BBNode_wpj6d")
@@ -69,9 +86,17 @@ group = &"player"
 [sub_resource type="BTAction" id="BTAction_a4jqi"]
 script = ExtResource("2_h5db5")
 
+[sub_resource type="BTSelector" id="BTSelector_v2uy1"]
+
+[sub_resource type="BTSequence" id="BTSequence_mimai"]
+
+[sub_resource type="BTSelector" id="BTSelector_vv6gt"]
+
+[sub_resource type="BTSequence" id="BTSequence_pn8ut"]
+
 [sub_resource type="BTTimeLimit" id="BTTimeLimit_xek5v"]
-children = [SubResource("BTAction_a4jqi")]
 time_limit = 2.0
+children = [SubResource("BTAction_a4jqi"), SubResource("BTSelector_v2uy1"), SubResource("BTSequence_mimai"), SubResource("BTSelector_vv6gt"), SubResource("BTSequence_pn8ut")]
 
 [sub_resource type="BTSequence" id="BTSequence_1xfnq"]
 custom_name = "Pursue player"
@@ -84,8 +109,8 @@ script = ExtResource("3_bpmfp")
 duration = 0.1
 
 [sub_resource type="BBNode" id="BBNode_s8evu"]
-resource_name = "AnimationPlayer"
 saved_value = NodePath("AnimationPlayer")
+resource_name = "AnimationPlayer"
 
 [sub_resource type="BTPlayAnimation" id="BTPlayAnimation_ppmxd"]
 await_completion = 2.0

@@ -1,0 +1,38 @@
+[gd_resource type="BehaviorTree" format=3 uid="uid://c51xncqwtlvpa"]
+
+[ext_resource type="Script" uid="uid://c6vvwf2uo583n" path="res://demo/ai/tasks/task_01.gd" id="1_1xsoi"]
+[ext_resource type="Script" uid="uid://c8iab1vhruh5k" path="res://demo/ai/tasks/task_02.gd" id="2_8pb8h"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_ycrem"]
+
+[sub_resource type="BTWait" id="BTWait_8pb8h"]
+
+[sub_resource type="BTAction" id="BTAction_8pb8h"]
+script = ExtResource("1_1xsoi")
+mensaje = "Esperando.."
+
+[sub_resource type="BTWait" id="BTWait_1xsoi"]
+
+[sub_resource type="BTAction" id="BTAction_1ohss"]
+script = ExtResource("1_1xsoi")
+
+[sub_resource type="BTWait" id="BTWait_c5te7"]
+
+[sub_resource type="BTAction" id="BTAction_uhx83"]
+script = ExtResource("1_1xsoi")
+mensaje = "Descansando.."
+
+[sub_resource type="BTWait" id="BTWait_1ohss"]
+
+[sub_resource type="BTAction" id="BTAction_c5te7"]
+script = ExtResource("2_8pb8h")
+
+[sub_resource type="BTSequence" id="BTSequence_uhx83"]
+children = [SubResource("BTWait_8pb8h"), SubResource("BTAction_8pb8h"), SubResource("BTWait_1xsoi"), SubResource("BTAction_1ohss"), SubResource("BTWait_c5te7"), SubResource("BTAction_uhx83"), SubResource("BTWait_1ohss"), SubResource("BTAction_c5te7")]
+
+[sub_resource type="BTSequence" id="BTSequence_6ef7u"]
+children = [SubResource("BTSequence_uhx83")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_ycrem")
+root_task = SubResource("BTSequence_6ef7u")

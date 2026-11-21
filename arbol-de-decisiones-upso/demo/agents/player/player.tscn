@@ -51,3 +51,5 @@ script = ExtResource("6_7o4a6")
 animation_player = NodePath("../../AnimationPlayer")
 animation = &"dodge"
 hurtbox_collision = NodePath("../../Root/Hurtbox/HurtboxCollisionShape2D")
+
+[node name="LimboHSM2" type="LimboHSM" parent="." index="6" unique_id=2136656292]
