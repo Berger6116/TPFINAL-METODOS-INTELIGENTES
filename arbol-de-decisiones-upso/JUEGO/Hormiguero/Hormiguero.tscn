@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ctgy5m8bvk0fa"]
 
-[ext_resource type="Script" uid="uid://b4c05bmc06wl5" path="res://Hormiguero/hormiguero.gd" id="1_cabha"]
+[ext_resource type="Script" uid="uid://b4c05bmc06wl5" path="res://JUEGO/Hormiguero/hormiguero.gd" id="1_cabha"]
 
 [node name="Hormiguero" type="Node2D" unique_id=1780764350]
 script = ExtResource("1_cabha")

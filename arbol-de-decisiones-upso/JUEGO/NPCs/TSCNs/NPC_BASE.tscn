@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dd7pw3xserhh8"]
 
-[ext_resource type="Script" uid="uid://choq0nod03flf" path="res://JUEGO/npc_base.gd" id="1_7rjfg"]
+[ext_resource type="Script" uid="uid://choq0nod03flf" path="res://JUEGO/NPCs/Scripts/npc_base.gd" id="1_7rjfg"]
 [ext_resource type="Texture2D" uid="uid://dwxavr3655lja" path="res://icon.svg" id="2_vgi7c"]
-[ext_resource type="BehaviorTree" uid="uid://c51xncqwtlvpa" path="res://JUEGO/comportamiento_1.tres" id="3_vgi7c"]
+[ext_resource type="BehaviorTree" uid="uid://c51xncqwtlvpa" path="res://JUEGO/NPCs/Comportamientos/comportamiento_1.tres" id="3_vgi7c"]
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_cuc60"]
 
