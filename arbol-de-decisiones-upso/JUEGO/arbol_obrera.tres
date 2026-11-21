@@ -1,0 +1,19 @@
+[gd_resource type="BehaviorTree" format=3 uid="uid://bv52iukj7sbrr"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_cuiuy"]
+
+[sub_resource type="BTSequence" id="BTSequence_cuiuy"]
+custom_name = "Huir"
+
+[sub_resource type="BTSequence" id="BTSequence_i4w28"]
+custom_name = "Recolectar"
+
+[sub_resource type="BTSequence" id="BTSequence_vhx3i"]
+custom_name = "Construir"
+
+[sub_resource type="BTSelector" id="BTSelector_6f768"]
+children = [SubResource("BTSequence_cuiuy"), SubResource("BTSequence_i4w28"), SubResource("BTSequence_vhx3i")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_cuiuy")
+root_task = SubResource("BTSelector_6f768")
