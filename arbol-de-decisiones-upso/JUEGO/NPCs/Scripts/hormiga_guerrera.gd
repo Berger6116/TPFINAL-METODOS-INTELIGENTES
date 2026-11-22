@@ -5,6 +5,7 @@ class_name HormigaGuerrera
 @export var velocidad:float = 60
 @export var limite_pasos:int =2
 @export var rango_enemigo: float = 150.0
+var rango_ataque:float = 20.0
 
 #Internas
 var direccion_actual: Vector2 = Vector2.DOWN
@@ -90,9 +91,17 @@ func hay_enemigo_cerca() -> bool:
 	return false
 
 func atacar(delta:float):
-	mover_a(objetivo_actual.global_position,delta)
-
-func ir_hacia_enemigo():
-	print("Yendo hacia enemigo")
+	var posicion_enemigo : Vector2 = objetivo_actual.global_position
+#	Ir hacia enemigo
+	if global_position.distance_to(posicion_enemigo) >= rango_ataque:
+		mover_a(objetivo_actual.global_position,delta)
+	#atacar
+	if global_position.distance_to(posicion_enemigo) <= rango_ataque:
+		morder(objetivo_actual)
+		
+func morder(objetivo):
+	if objetivo is Enemigo:
+		objetivo.despawnear()
+		objetivo = null
 
 	

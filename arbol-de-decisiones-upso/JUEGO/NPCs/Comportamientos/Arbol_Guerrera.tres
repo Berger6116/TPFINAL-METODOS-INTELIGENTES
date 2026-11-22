@@ -12,10 +12,8 @@ script = ExtResource("2_h8ytx")
 [sub_resource type="BTAction" id="BTAction_5vyqr"]
 script = ExtResource("3_5vyqr")
 
-[sub_resource type="BTWait" id="BTWait_5vyqr"]
-
 [sub_resource type="BTDynamicSequence" id="BTDynamicSequence_5vyqr"]
-children = [SubResource("BTCondition_iqwlq"), SubResource("BTAction_5vyqr"), SubResource("BTWait_5vyqr")]
+children = [SubResource("BTCondition_iqwlq"), SubResource("BTAction_5vyqr")]
 
 [sub_resource type="BTAction" id="BTAction_7s468"]
 script = ExtResource("1_3pjoy")
