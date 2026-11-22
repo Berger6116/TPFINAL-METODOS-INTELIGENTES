@@ -16,6 +16,10 @@ var en_objetivo : bool = false
 var hormiguero
 
 
+func _ready() -> void:
+	velocidad = variador_velocidad(velocidad)
+	#print(velocidad)
+
 func cambiar_label(texto:String)->void:
 	$AccionObjeto.text = texto
 
@@ -58,6 +62,12 @@ func patrullar(delta: float) -> void:
 		en_objetivo = true
 		return
 	mover_a(objetivo_actual.global_position, delta)
+
+func variador_velocidad(vel:float)-> float:
+	vel += randf_range(0,60)
+	return vel
+
+
 
 func mover_a(objetivo_pos: Vector2, delta: float) -> void:
 	var vector_hacia_objetivo := objetivo_pos - global_position

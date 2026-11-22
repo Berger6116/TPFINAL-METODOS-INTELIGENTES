@@ -461,23 +461,23 @@ position = Vector2(553, 109)
 Paso = 2
 
 [node name="PuntoPatrulla4" parent="." unique_id=2069304304 instance=ExtResource("4_c75vu")]
-position = Vector2(799, 305)
+position = Vector2(883, 113)
 Paso = 4
 
 [node name="PuntoPatrulla8" parent="." unique_id=248142661 instance=ExtResource("4_c75vu")]
-position = Vector2(910, 118)
+position = Vector2(721, 307)
 Paso = 5
 
 [node name="PuntoPatrulla9" parent="." unique_id=1330672779 instance=ExtResource("4_c75vu")]
-position = Vector2(1011, 176)
+position = Vector2(994, 226)
 Paso = 6
 
 [node name="PuntoPatrulla10" parent="." unique_id=1714127507 instance=ExtResource("4_c75vu")]
-position = Vector2(1021, 356)
+position = Vector2(999, 364)
 Paso = 7
 
 [node name="PuntoPatrulla11" parent="." unique_id=1656615344 instance=ExtResource("4_c75vu")]
-position = Vector2(997, 504)
+position = Vector2(949, 492)
 Paso = 8
 
 [node name="PuntoPatrulla12" parent="." unique_id=1733067243 instance=ExtResource("4_c75vu")]
@@ -485,11 +485,11 @@ position = Vector2(795, 520)
 Paso = 9
 
 [node name="PuntoPatrulla13" parent="." unique_id=364659490 instance=ExtResource("4_c75vu")]
-position = Vector2(663, 532)
+position = Vector2(603, 527)
 Paso = 10
 
 [node name="PuntoPatrulla14" parent="." unique_id=1853081645 instance=ExtResource("4_c75vu")]
-position = Vector2(561, 343)
+position = Vector2(423, 314)
 Paso = 11
 
 [node name="PuntoPatrulla15" parent="." unique_id=1349931498 instance=ExtResource("4_c75vu")]
@@ -497,30 +497,30 @@ position = Vector2(443, 529)
 Paso = 12
 
 [node name="PuntoPatrulla16" parent="." unique_id=719789240 instance=ExtResource("4_c75vu")]
-position = Vector2(322, 508)
+position = Vector2(295, 513)
 Paso = 13
 
 [node name="PuntoPatrulla17" parent="." unique_id=762295052 instance=ExtResource("4_c75vu")]
-position = Vector2(165, 471)
+position = Vector2(157, 464)
 Paso = 14
 
 [node name="PuntoPatrulla18" parent="." unique_id=1324882122 instance=ExtResource("4_c75vu")]
-position = Vector2(330, 341)
+position = Vector2(179, 317)
 Paso = 15
 
 [node name="PuntoPatrulla19" parent="." unique_id=247118606 instance=ExtResource("4_c75vu")]
-position = Vector2(150, 280)
+position = Vector2(121, 216)
 Paso = 16
 
 [node name="PuntoPatrulla5" parent="." unique_id=137293402 instance=ExtResource("4_c75vu")]
-position = Vector2(736, 128)
+position = Vector2(725, 104)
 Paso = 3
 
 [node name="PuntoPatrulla3" parent="." unique_id=768817031 instance=ExtResource("4_c75vu")]
 position = Vector2(294, 89)
 
 [node name="PuntoPatrulla2" parent="." unique_id=1183209428 instance=ExtResource("4_c75vu")]
-position = Vector2(403, 153)
+position = Vector2(405, 93)
 Paso = 1
 
 [node name="Hormiguero" parent="." unique_id=1780764350 instance=ExtResource("6_odjb3")]
