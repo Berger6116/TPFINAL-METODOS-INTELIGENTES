@@ -130,3 +130,18 @@ script = ExtResource("1_cabha")
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2075242775]
 tile_map_data = PackedByteArray("AAD//wAAAAARAAIAAAD/////AAARAAIAAAAAAP//AAARAAIAAAAAAAAAAAARAAIAAAD//wEAAAARAAMAAAAAAAEAAAARAAMAAAABAAEAAAASAAMAAAABAAAAAAASAAIAAAABAP//AAASAAIAAAABAP7/AAASAAEAAAAAAP7/AAARAAEAAAD///7/AAARAAEAAAD+//7/AAAQAAEAAAD+////AAAQAAIAAAD+/wAAAAAQAAIAAAD+/wEAAAAQAAMAAAA=")
 tile_set = SubResource("TileSet_u0ya7")
+
+[node name="Timer" type="Timer" parent="." unique_id=47465882]
+wait_time = 10.0
+autostart = true
+
+[node name="spawner_obreras" type="Marker2D" parent="." unique_id=825397003]
+position = Vector2(32, 32)
+
+[node name="spawner_guerreras" type="Marker2D" parent="." unique_id=1296278936]
+position = Vector2(0, 41)
+
+[node name="spawner_exploradoras" type="Marker2D" parent="." unique_id=2002427295]
+position = Vector2(-33, 32)
+
+[connection signal="timeout" from="Timer" to="." method="proceso_spawn"]
