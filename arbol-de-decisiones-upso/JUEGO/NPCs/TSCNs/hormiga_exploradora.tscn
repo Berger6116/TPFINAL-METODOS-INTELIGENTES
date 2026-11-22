@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://q2judyjew8as"]
+
+[ext_resource type="Texture2D" uid="uid://bcsb5wmf7ajjo" path="res://JUEGO/Recursos/NPCs/Ants.png" id="1_1bdus"]
+[ext_resource type="Script" uid="uid://c18gpvtqt4eya" path="res://JUEGO/NPCs/Scripts/hormiga_exploradora.gd" id="1_cn6dd"]
+[ext_resource type="BehaviorTree" uid="uid://db4vhfox4f3fu" path="res://JUEGO/NPCs/Comportamientos/arbol_exploradora.tres" id="2_dn0bh"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_cn6dd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u0ya7"]
+radius = 150.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u0ya7"]
+radius = 16.0
+height = 52.0
+
+[node name="HormigaExploradora" type="Node2D" unique_id=1499434555]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_cn6dd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=930747014]
+texture = ExtResource("1_1bdus")
+hframes = 12
+vframes = 8
+frame = 6
+
+[node name="ControladorExploradora" type="BTPlayer" parent="." unique_id=180681451]
+behavior_tree = ExtResource("2_dn0bh")
+blackboard_plan = SubResource("BlackboardPlan_cn6dd")
+
+[node name="AreaVision" type="Area2D" parent="." unique_id=1471969061]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaVision" unique_id=1721742445]
+shape = SubResource("CircleShape2D_u0ya7")
+
+[node name="Cuerpo" type="Area2D" parent="." unique_id=768331226]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cuerpo" unique_id=104507047]
+position = Vector2(-1, 15)
+shape = SubResource("CapsuleShape2D_u0ya7")
+
+[node name="Detector" type="RayCast2D" parent="." unique_id=671203611]
+target_position = Vector2(0, 120)
+collide_with_areas = true
+
+[connection signal="body_entered" from="AreaVision" to="." method="al_encontrar_algo"]
