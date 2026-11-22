@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ehmcgy6b8icr" path="res://JUEGO/NPCs/TSCNs/hormiga_guerrera.tscn" id="3_7cvvm"]
 [ext_resource type="PackedScene" uid="uid://cw7bgrcbd5a1c" path="res://JUEGO/NPCs/TSCNs/PuntoPatrulla.tscn" id="4_c75vu"]
 [ext_resource type="PackedScene" uid="uid://coigrdb8wjonv" path="res://JUEGO/NPCs/TSCNs/Enemigo.tscn" id="5_c75vu"]
+[ext_resource type="PackedScene" uid="uid://ctgy5m8bvk0fa" path="res://JUEGO/Hormiguero/Hormiguero.tscn" id="6_odjb3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7cvvm"]
 texture = ExtResource("1_tbpfo")
@@ -457,18 +458,30 @@ tile_set = SubResource("TileSet_j08vg")
 metadata/_edit_lock_ = true
 
 [node name="HormigaGuerrera" parent="." unique_id=1499434555 instance=ExtResource("3_7cvvm")]
-position = Vector2(690, 497)
+position = Vector2(152, 136)
 velocidad = 100.0
 
 [node name="PuntoPatrulla" parent="." unique_id=1917114213 instance=ExtResource("4_c75vu")]
-position = Vector2(779, 472)
+position = Vector2(1010, 80)
 Paso = 2
 
+[node name="PuntoPatrulla4" parent="." unique_id=2069304304 instance=ExtResource("4_c75vu")]
+position = Vector2(597, 440)
+Paso = 4
+
+[node name="PuntoPatrulla6" parent="." unique_id=882293854 instance=ExtResource("4_c75vu")]
+position = Vector2(138, 561)
+Paso = 5
+
+[node name="PuntoPatrulla5" parent="." unique_id=137293402 instance=ExtResource("4_c75vu")]
+position = Vector2(1025, 537)
+Paso = 3
+
 [node name="PuntoPatrulla3" parent="." unique_id=768817031 instance=ExtResource("4_c75vu")]
-position = Vector2(310, 468)
+position = Vector2(302, 72)
 
 [node name="PuntoPatrulla2" parent="." unique_id=1183209428 instance=ExtResource("4_c75vu")]
-position = Vector2(542, 160)
+position = Vector2(586, 224)
 Paso = 1
 
 [node name="Enemigo" parent="." unique_id=542202064 instance=ExtResource("5_c75vu")]
@@ -479,3 +492,6 @@ position = Vector2(918, 156)
 
 [node name="Enemigo2" parent="." unique_id=1033526294 instance=ExtResource("5_c75vu")]
 position = Vector2(341, 256)
+
+[node name="Hormiguero" parent="." unique_id=1780764350 instance=ExtResource("6_odjb3")]
+position = Vector2(148, 128)

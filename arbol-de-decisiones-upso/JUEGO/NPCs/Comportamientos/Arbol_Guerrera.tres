@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c8iab1vhruh5k" path="res://ai/tasks/Patrullar.gd" id="1_3pjoy"]
 [ext_resource type="Script" uid="uid://5041iol5tkb3" path="res://ai/tasks/hay_enemigos_guerrero.gd" id="2_h8ytx"]
 [ext_resource type="Script" uid="uid://rkewgxu3ijvh" path="res://ai/tasks/Atacar.gd" id="3_5vyqr"]
+[ext_resource type="Script" uid="uid://c6qbwixpcbbrx" path="res://ai/tasks/DefenderHormiguero.gd" id="4_ggqm8"]
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_wdfh2"]
 
@@ -12,19 +13,25 @@ script = ExtResource("2_h8ytx")
 [sub_resource type="BTAction" id="BTAction_5vyqr"]
 script = ExtResource("3_5vyqr")
 
-[sub_resource type="BTDynamicSequence" id="BTDynamicSequence_5vyqr"]
-children = [SubResource("BTCondition_iqwlq"), SubResource("BTAction_5vyqr")]
+[sub_resource type="BTAction" id="BTAction_snypl"]
+script = ExtResource("4_ggqm8")
+
+[sub_resource type="BTWait" id="BTWait_ggqm8"]
+
+[sub_resource type="BTSequence" id="BTSequence_7s468"]
+children = [SubResource("BTCondition_iqwlq"), SubResource("BTAction_5vyqr"), SubResource("BTAction_snypl"), SubResource("BTWait_ggqm8")]
 
 [sub_resource type="BTAction" id="BTAction_7s468"]
 script = ExtResource("1_3pjoy")
 
 [sub_resource type="BTWait" id="BTWait_snypl"]
+duration = 0.3
 
 [sub_resource type="BTSequence" id="BTSequence_ggqm8"]
 children = [SubResource("BTAction_7s468"), SubResource("BTWait_snypl")]
 
 [sub_resource type="BTDynamicSelector" id="BTDynamicSelector_7s468"]
-children = [SubResource("BTDynamicSequence_5vyqr"), SubResource("BTSequence_ggqm8")]
+children = [SubResource("BTSequence_7s468"), SubResource("BTSequence_ggqm8")]
 
 [resource]
 blackboard_plan = SubResource("BlackboardPlan_wdfh2")
