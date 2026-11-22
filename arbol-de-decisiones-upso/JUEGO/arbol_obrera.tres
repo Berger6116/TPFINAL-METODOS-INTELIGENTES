@@ -35,9 +35,9 @@ script = ExtResource("1_i4w28")
 [sub_resource type="BTSequence" id="BTSequence_tq8a2"]
 children = [SubResource("BTAction_dosio")]
 
-[sub_resource type="BTSelector" id="BTSelector_yopho"]
+[sub_resource type="BTDynamicSelector" id="BTDynamicSelector_gbja5"]
 children = [SubResource("BTSequence_gbja5"), SubResource("BTSequence_l488r"), SubResource("BTSequence_tq8a2")]
 
 [resource]
 blackboard_plan = SubResource("BlackboardPlan_cuiuy")
-root_task = SubResource("BTSelector_yopho")
+root_task = SubResource("BTDynamicSelector_gbja5")
