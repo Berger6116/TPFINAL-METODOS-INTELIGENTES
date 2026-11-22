@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dniwwuhjb3434" path="res://JUEGO/NPCs/Scripts/hormiga_guerrera.gd" id="1_atckv"]
 [ext_resource type="Texture2D" uid="uid://bcsb5wmf7ajjo" path="res://JUEGO/Recursos/NPCs/Ants.png" id="2_4xqh7"]
-[ext_resource type="BehaviorTree" uid="uid://db4vhfox4f3fu" path="res://JUEGO/NPCs/Comportamientos/arbol_exploradora.tres" id="3_vir10"]
+[ext_resource type="BehaviorTree" uid="uid://bbegb6va6iwpa" path="res://JUEGO/NPCs/Comportamientos/Arbol_Guerrera.tres" id="3_atckv"]
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_cn6dd"]
 
@@ -26,8 +26,8 @@ hframes = 12
 vframes = 8
 frame = 6
 
-[node name="ControladorExploradora" type="BTPlayer" parent="." unique_id=180681451]
-behavior_tree = ExtResource("3_vir10")
+[node name="ControladorGuerrera" type="BTPlayer" parent="." unique_id=180681451]
+behavior_tree = ExtResource("3_atckv")
 blackboard_plan = SubResource("BlackboardPlan_cn6dd")
 
 [node name="AreaVision" type="Area2D" parent="." unique_id=1471969061]

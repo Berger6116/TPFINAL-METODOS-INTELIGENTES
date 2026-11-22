@@ -1,7 +1,7 @@
 [gd_resource type="BehaviorTree" format=3 uid="uid://c51xncqwtlvpa"]
 
 [ext_resource type="Script" uid="uid://c6vvwf2uo583n" path="res://demo/ai/tasks/task_01.gd" id="1_1xsoi"]
-[ext_resource type="Script" uid="uid://c8iab1vhruh5k" path="res://demo/ai/tasks/task_02.gd" id="2_8pb8h"]
+[ext_resource type="Script" uid="uid://c8iab1vhruh5k" path="res://ai/tasks/Patrullar.gd" id="2_8pb8h"]
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_ycrem"]
 
