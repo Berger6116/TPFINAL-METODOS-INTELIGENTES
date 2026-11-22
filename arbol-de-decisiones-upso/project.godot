@@ -29,6 +29,7 @@ project/assembly_name="ArbolDeDecisiones_UPSO"
 Consumible=""
 PasoPatrulla=""
 Enemigo=""
+Hormiguero=""
 
 [physics]
 
