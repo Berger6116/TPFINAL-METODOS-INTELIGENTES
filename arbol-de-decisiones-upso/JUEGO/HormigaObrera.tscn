@@ -19,6 +19,7 @@ text = "Soy Hormigua Obrera
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1792166091]
+modulate = Color(0.9764706, 1, 0, 1)
 texture = ExtResource("2_oa7ix")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=202576392]
