@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cw7bgrcbd5a1c"]
+
+[ext_resource type="Script" uid="uid://cxp0vfxemqntn" path="res://JUEGO/NPCs/TSCNs/punto_patrulla.gd" id="1_qqwtx"]
+
+[node name="PuntoPatrulla" type="Node2D" unique_id=1917114213 groups=["PasoPatrulla"]]
+script = ExtResource("1_qqwtx")

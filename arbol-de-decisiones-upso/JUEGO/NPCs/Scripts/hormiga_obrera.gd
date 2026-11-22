@@ -10,6 +10,9 @@ class_name hormiga_obrera
 func _ready() -> void:
 	print("HormigaObrera lista en escena: ", get_tree().current_scene.name)
 
+
+#============ ATENCION REVISAR ==============
+## Aca deberia buscar un nodo en el grupo "Enemigos" no un nodo llamado "Enemigo" 
 func buscar_nodo(nombre: String) -> Node2D:
 	if get_tree().current_scene == null:
 		return null
