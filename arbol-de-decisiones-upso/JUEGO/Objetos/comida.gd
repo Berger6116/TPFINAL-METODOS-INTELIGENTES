@@ -1,4 +1,5 @@
 extends Node2D
+class_name Comida
 var alimento: int
 
 func _ready() -> void:
