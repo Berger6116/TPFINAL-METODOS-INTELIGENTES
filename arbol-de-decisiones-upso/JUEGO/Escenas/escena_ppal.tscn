@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://3hyv43m0evvx" path="res://JUEGO/HormigaObrera.tscn" id="4_ykmru"]
 [ext_resource type="PackedScene" uid="uid://c8mcv0aa28cuk" path="res://JUEGO/Objetos/Comida.tscn" id="5_1otkg"]
 [ext_resource type="PackedScene" uid="uid://d2knbsd43y2j3" path="res://JUEGO/Objetos/Basura.tscn" id="6_mw6f6"]
+[ext_resource type="PackedScene" uid="uid://ctgy5m8bvk0fa" path="res://JUEGO/Hormiguero/Hormiguero.tscn" id="7_nm0nk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ykmru"]
 texture = ExtResource("1_877it")
@@ -466,3 +467,6 @@ position = Vector2(209, 328)
 
 [node name="Basura" parent="." unique_id=1850338114 instance=ExtResource("6_mw6f6")]
 position = Vector2(109.00003, 420.00003)
+
+[node name="Hormiguero" parent="." unique_id=1780764350 instance=ExtResource("7_nm0nk")]
+position = Vector2(703, 85)

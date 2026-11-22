@@ -6,6 +6,7 @@ class_name gestor_hormiguero
 @export var guerreras:int = 0
 @export var exploradoras:int = 0
 @export var integridad:int = 100
+@export var limite_region:float = 150.0
 
 func _process(delta: float) -> void:
 	if comida >0:
