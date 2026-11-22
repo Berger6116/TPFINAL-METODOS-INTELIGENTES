@@ -465,8 +465,8 @@ metadata/_edit_lock_ = true
 [node name="Hormiguero" parent="." unique_id=1780764350 instance=ExtResource("7_nm0nk")]
 position = Vector2(703, 85)
 
-[node name="HormigaExploradora" parent="." unique_id=1499434555 instance=ExtResource("3_50ep6")]
-position = Vector2(227, 214)
+[node name="HormigaExploradora2" parent="." unique_id=1711602647 instance=ExtResource("3_50ep6")]
+position = Vector2(133, 180)
 
 [node name="HormigaObrera" parent="." unique_id=693006371 instance=ExtResource("4_ykmru")]
 position = Vector2(831, 199)
@@ -477,8 +477,6 @@ position = Vector2(220, 401)
 [node name="Basura" parent="." unique_id=1850338114 instance=ExtResource("6_mw6f6")]
 position = Vector2(109.00003, 420.00003)
 
-[node name="Hormiguero" parent="." unique_id=1780764350 instance=ExtResource("7_nm0nk")]
-position = Vector2(703, 85)
 [node name="Basura2" parent="." unique_id=1430841357 instance=ExtResource("6_mw6f6")]
 position = Vector2(618, 142.00003)
 
