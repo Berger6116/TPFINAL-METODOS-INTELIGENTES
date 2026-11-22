@@ -28,6 +28,7 @@ behavior_tree = ExtResource("2_dn0bh")
 blackboard_plan = SubResource("BlackboardPlan_cn6dd")
 
 [node name="AreaVision" type="Area2D" parent="." unique_id=1471969061]
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaVision" unique_id=1721742445]
 shape = SubResource("CircleShape2D_u0ya7")
@@ -42,4 +43,10 @@ shape = SubResource("CapsuleShape2D_u0ya7")
 target_position = Vector2(0, 120)
 collide_with_areas = true
 
-[connection signal="body_entered" from="AreaVision" to="." method="al_encontrar_algo"]
+[node name="AccionObjeto" type="Label" parent="." unique_id=1432803008]
+offset_left = 50.0
+offset_top = -88.0
+offset_right = 90.0
+offset_bottom = -65.0
+
+[connection signal="area_entered" from="AreaVision" to="." method="encontrar_algo"]

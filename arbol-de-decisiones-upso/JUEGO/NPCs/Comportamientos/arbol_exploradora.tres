@@ -2,17 +2,19 @@
 
 [ext_resource type="Script" uid="uid://bs2tyay2josae" path="res://ai/tasks/deambular.gd" id="1_4cmsc"]
 [ext_resource type="Script" uid="uid://cyxsu5qnatprq" path="res://ai/tasks/detectarobstaculo.gd" id="1_ypanh"]
-[ext_resource type="Script" uid="uid://cv53eg3ojpu58" path="res://ai/tasks/esperar.gd" id="2_f0p2p"]
 [ext_resource type="Script" uid="uid://blibyufg7re08" path="res://ai/tasks/elegirdireccionlibre.gd" id="3_ouftp"]
+[ext_resource type="Script" uid="uid://3tiqse53ohh6" path="res://ai/tasks/procesarobjetoencontrado.gd" id="4_ouftp"]
 [ext_resource type="Script" uid="uid://cy7virxhwvxb1" path="res://ai/tasks/cambiardireccionA.gd" id="4_xr4qd"]
+[ext_resource type="Script" uid="uid://cb857p3egqpa0" path="res://ai/tasks/acercarseaobjeto.gd" id="5_xr4qd"]
+[ext_resource type="Script" uid="uid://burpq3d150rp6" path="res://ai/tasks/procesarobjetoexploradora.gd" id="6_in2it"]
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_dn0bh"]
 
 [sub_resource type="BTCondition" id="BTCondition_f0p2p"]
 script = ExtResource("1_ypanh")
 
-[sub_resource type="BTAction" id="BTAction_ouftp"]
-script = ExtResource("2_f0p2p")
+[sub_resource type="BTWait" id="BTWait_xr4qd"]
+duration = 2.0
 
 [sub_resource type="BTAction" id="BTAction_in2it"]
 script = ExtResource("3_ouftp")
@@ -21,13 +23,29 @@ script = ExtResource("3_ouftp")
 script = ExtResource("4_xr4qd")
 
 [sub_resource type="BTSequence" id="BTSequence_xr4qd"]
-children = [SubResource("BTCondition_f0p2p"), SubResource("BTAction_ouftp"), SubResource("BTAction_in2it"), SubResource("BTAction_mggax")]
+children = [SubResource("BTCondition_f0p2p"), SubResource("BTWait_xr4qd"), SubResource("BTAction_in2it"), SubResource("BTAction_mggax")]
+
+[sub_resource type="BTAction" id="BTAction_7itrj"]
+script = ExtResource("4_ouftp")
+
+[sub_resource type="BTAction" id="BTAction_hvmva"]
+script = ExtResource("5_xr4qd")
+distancia_minima = 30.0
+
+[sub_resource type="BTAction" id="BTAction_0w57w"]
+script = ExtResource("6_in2it")
+
+[sub_resource type="BTWait" id="BTWait_in2it"]
+duration = 10.0
+
+[sub_resource type="BTSequence" id="BTSequence_0w57w"]
+children = [SubResource("BTAction_7itrj"), SubResource("BTAction_hvmva"), SubResource("BTAction_0w57w"), SubResource("BTWait_in2it")]
 
 [sub_resource type="BTAction" id="BTAction_lxy5a"]
 script = ExtResource("1_4cmsc")
 
 [sub_resource type="BTDynamicSelector" id="BTDynamicSelector_ouftp"]
-children = [SubResource("BTSequence_xr4qd"), SubResource("BTAction_lxy5a")]
+children = [SubResource("BTSequence_xr4qd"), SubResource("BTSequence_0w57w"), SubResource("BTAction_lxy5a")]
 
 [resource]
 blackboard_plan = SubResource("BlackboardPlan_dn0bh")

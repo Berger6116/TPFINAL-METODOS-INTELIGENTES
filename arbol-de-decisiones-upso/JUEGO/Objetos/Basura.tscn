@@ -16,6 +16,7 @@ vframes = 4
 frame = 14
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1088125395]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1057961190]
 scale = Vector2(0.9, 0.9)

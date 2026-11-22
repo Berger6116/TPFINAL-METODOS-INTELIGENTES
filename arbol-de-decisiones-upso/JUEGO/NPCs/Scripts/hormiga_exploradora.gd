@@ -11,13 +11,16 @@ var ubicacion_hormiguero: Vector2
 @export var tiempo_maximo_cambio: float = 10.0
 
 @onready var detector_de_obstaculos: RayCast2D = $Detector
+@onready var vision:Area2D = $AreaVision
+
+signal objeto_detectado(String)
 
 #Datos temporales
 var direccion_actual: Vector2 = Vector2.DOWN
 var tiempo_cambio_restante: float = 0.0
-var objeto_encontrado: Node2D = null
 var ubicacion_objeto: Vector2
 var camino_al_hormiguero: Path2D
+var objeto_encontrado: Node = null
 #Datos de navegacion (wander) temporales
 var obstaculo_detectado: bool = false
 var direcciones_disponibles: Array[Vector2] = []
@@ -65,14 +68,19 @@ func cambiar_direccion_a(nueva_direccion: Vector2) -> void:
 	rotation = direccion_actual.angle() - Vector2.DOWN.angle()
 	tiempo_cambio_restante = randf_range(tiempo_minimo_cambio, tiempo_maximo_cambio)
 
-func al_encontrar_algo(cosa) -> String:
-	#Al encontrar algo en su área de visión se fija que es y duevuelve el tipo o esquivar.
-	#if cosa is Comida:
-		#return "Comida"
-	#if cosa is Basura:
-		#return "Basura"
-	#else:
-		return "Esquivar"
+func encontrar_algo(cosa) -> void:
+	#Al encontrar algo en su área de visión se fija que es y duevuelve el tipo.
+	if is_instance_valid(objeto_encontrado):
+		return
+	var objeto = cosa.get_parent()
+	if objeto is Basura:
+		objeto_encontrado = objeto
+		print("Encontré basura")
+		objeto_detectado.emit("Basura")
+	elif objeto is Comida:
+		objeto_encontrado = objeto
+		print("Encontré comida")
+		objeto_detectado.emit("Comida")
 
 func buscar_camino_al_hormiguero() -> bool:
 	#Busca si hay un camino al hormiguero.

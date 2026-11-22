@@ -52,7 +52,7 @@ func ir_a_comida(delta: float) -> bool:
 
 func construir_hormiguero(delta: float) -> void:
 	estado_label.text = "Construyendo..."
-	print("Obrera: Construyendo...")
+	#print("Obrera: Construyendo...")
 	var hormiguero := buscar_nodo("Hormiguero")
 	if hormiguero != null and global_position.distance_to(hormiguero.global_position) > distancia_llegada:
 		var dir := global_position.direction_to(hormiguero.global_position)

@@ -1,4 +1,5 @@
 extends Node2D
+class_name Basura
 var resistencia: int
 
 func _ready() -> void:

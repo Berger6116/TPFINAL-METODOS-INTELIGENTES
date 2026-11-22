@@ -462,7 +462,7 @@ tile_set = SubResource("TileSet_u0ya7")
 position = Vector2(831, 199)
 
 [node name="Comida" parent="." unique_id=1084008944 instance=ExtResource("5_1otkg")]
-position = Vector2(278, 310)
+position = Vector2(209, 328)
 
 [node name="Basura" parent="." unique_id=1850338114 instance=ExtResource("6_mw6f6")]
-position = Vector2(672, 375)
+position = Vector2(109.00003, 420.00003)
