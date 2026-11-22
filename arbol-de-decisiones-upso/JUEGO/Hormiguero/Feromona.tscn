@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cwyf4rn113tis"]
+
+[sub_resource type="Gradient" id="Gradient_6vi6o"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.35686275)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_u0ya7"]
+gradient = SubResource("Gradient_6vi6o")
+fill = 1
+fill_from = Vector2(0.51955307, 0.5027933)
+
+[node name="Feromona" type="Node2D" unique_id=763882740]
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=647991426]
+color = Color(0.14901961, 1, 0.43529412, 1)
+energy = 0.05
+texture = SubResource("GradientTexture2D_u0ya7")

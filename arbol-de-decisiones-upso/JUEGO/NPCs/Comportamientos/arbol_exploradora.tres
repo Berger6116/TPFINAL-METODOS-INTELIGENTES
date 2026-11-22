@@ -7,9 +7,26 @@
 [ext_resource type="Script" uid="uid://cy7virxhwvxb1" path="res://ai/tasks/cambiardireccionA.gd" id="4_xr4qd"]
 [ext_resource type="Script" uid="uid://cb857p3egqpa0" path="res://ai/tasks/acercarseaobjeto.gd" id="5_xr4qd"]
 [ext_resource type="Script" uid="uid://burpq3d150rp6" path="res://ai/tasks/procesarobjetoexploradora.gd" id="6_in2it"]
+[ext_resource type="Script" uid="uid://ctej3v5c6bwwd" path="res://ai/tasks/iniciarrutacomida.gd" id="7_7itrj"]
 [ext_resource type="Script" uid="uid://cfarlsko6mwii" path="res://ai/tasks/consumirbasura.gd" id="7_mggax"]
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_dn0bh"]
+
+[sub_resource type="BBVariant" id="BBVariant_hvmva"]
+type = 1
+saved_value = true
+resource_name = "true"
+
+[sub_resource type="BTCheckAgentProperty" id="BTCheckAgentProperty_0w57w"]
+property = &"volviendo_al_hormiguero"
+value = SubResource("BBVariant_hvmva")
+
+[sub_resource type="BTAction" id="BTAction_d1ig4"]
+script = ExtResource("7_7itrj")
+
+[sub_resource type="BTSequence" id="BTSequence_cx5q1"]
+custom_name = "Sequence Volviendo Al Hormiguero"
+children = [SubResource("BTCheckAgentProperty_0w57w"), SubResource("BTAction_d1ig4")]
 
 [sub_resource type="BTCondition" id="BTCondition_f0p2p"]
 script = ExtResource("1_ypanh")
@@ -51,9 +68,24 @@ text = "Buscando camino al hormiguero desde la comida"
 [sub_resource type="BTWait" id="BTWait_in2it"]
 duration = 2.0
 
+[sub_resource type="BBVariant" id="BBVariant_7itrj"]
+type = 1
+saved_value = false
+resource_name = "false"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_hvmva"]
+variable = &"enrutandose"
+value = SubResource("BBVariant_7itrj")
+
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_mggax"]
+text = "Vamoooo más comida"
+
+[sub_resource type="BTAction" id="BTAction_k4ccf"]
+script = ExtResource("7_7itrj")
+
 [sub_resource type="BTSequence" id="BTSequence_hvmva"]
 custom_name = " SequenceComida"
-children = [SubResource("BTCheckVar_mggax"), SubResource("BTConsolePrint_7itrj"), SubResource("BTWait_in2it")]
+children = [SubResource("BTCheckVar_mggax"), SubResource("BTConsolePrint_7itrj"), SubResource("BTWait_in2it"), SubResource("BTCheckVar_hvmva"), SubResource("BTConsolePrint_mggax"), SubResource("BTAction_k4ccf")]
 
 [sub_resource type="BBVariant" id="BBVariant_mggax"]
 type = 4
@@ -86,13 +118,14 @@ children = [SubResource("BTCheckVar_0m34b"), SubResource("BTRepeat_d1ig4")]
 children = [SubResource("BTSequence_hvmva"), SubResource("BTSequence_d1ig4")]
 
 [sub_resource type="BTSequence" id="BTSequence_0w57w"]
+custom_name = "Sequence Objetos"
 children = [SubResource("BTAction_7itrj"), SubResource("BTAction_hvmva"), SubResource("BTAction_0w57w"), SubResource("BTSelector_cx5q1")]
 
 [sub_resource type="BTAction" id="BTAction_lxy5a"]
 script = ExtResource("1_4cmsc")
 
 [sub_resource type="BTDynamicSelector" id="BTDynamicSelector_ouftp"]
-children = [SubResource("BTSequence_xr4qd"), SubResource("BTSequence_0w57w"), SubResource("BTAction_lxy5a")]
+children = [SubResource("BTSequence_cx5q1"), SubResource("BTSequence_xr4qd"), SubResource("BTSequence_0w57w"), SubResource("BTAction_lxy5a")]
 
 [resource]
 blackboard_plan = SubResource("BlackboardPlan_dn0bh")

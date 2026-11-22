@@ -26,6 +26,11 @@ var obstaculo_detectado: bool = false
 var direcciones_disponibles: Array[Vector2] = []
 var tiempo_espera_obstaculo: float = 2.0
 
+#Datos temporales del regreso al hormiguero al encontrar comida.
+var camino_regreso: Array[Vector2] = []
+var indice_punto_camino: int = 0
+var volviendo_al_hormiguero: bool = false
+
 func _ready() -> void:
 	tiempo_cambio_restante = randf_range(tiempo_minimo_cambio, tiempo_maximo_cambio)
 	hormiguero_actual = get_tree().current_scene.find_child("Hormiguero",true,false)
@@ -45,7 +50,6 @@ func deambular (delta) -> void:
 	if tiempo_cambio_restante <= 0.0:
 		cambiar_direccion()
 	global_position += direccion_actual * velocidad * delta
-
 func comprobar_obstaculo() -> bool:
 	detector_de_obstaculos.force_raycast_update()
 	obstaculo_detectado = detector_de_obstaculos.is_colliding()

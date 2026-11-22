@@ -1,6 +1,7 @@
 extends Node2D
 class_name Comida
 var alimento: int
+var enrutandose:bool = false
 
 func _ready() -> void:
 	alimento = randi_range(10,100)
