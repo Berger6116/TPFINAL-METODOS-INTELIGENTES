@@ -3,7 +3,7 @@ class_name HormigaGuerrera
 
 #Externas
 @export var velocidad:float = 60
-@export var limite_pasos:int =2
+@export var limite_pasos:int = 5
 @export var rango_enemigo: float = 150.0
 var rango_ataque:float = 20.0
 
@@ -13,7 +13,12 @@ var punto_patrulla: Vector2 = Vector2.ZERO
 var paso_patrulla_actual : int = 0
 var objetivo_actual : Node2D
 var en_objetivo : bool = false
+var hormiguero
 
+
+func _ready() -> void:
+	velocidad = variador_velocidad(velocidad)
+	#print(velocidad)
 
 func cambiar_label(texto:String)->void:
 	$AccionObjeto.text = texto
@@ -58,6 +63,12 @@ func patrullar(delta: float) -> void:
 		return
 	mover_a(objetivo_actual.global_position, delta)
 
+func variador_velocidad(vel:float)-> float:
+	vel += randf_range(0,60)
+	return vel
+
+
+
 func mover_a(objetivo_pos: Vector2, delta: float) -> void:
 	var vector_hacia_objetivo := objetivo_pos - global_position
 	cambiar_direccion_a(vector_hacia_objetivo)
@@ -90,18 +101,46 @@ func hay_enemigo_cerca() -> bool:
 			return true
 	return false
 
-func atacar(delta:float):
-	var posicion_enemigo : Vector2 = objetivo_actual.global_position
-#	Ir hacia enemigo
-	if global_position.distance_to(posicion_enemigo) >= rango_ataque:
-		mover_a(objetivo_actual.global_position,delta)
-	#atacar
-	if global_position.distance_to(posicion_enemigo) <= rango_ataque:
-		morder(objetivo_actual)
-		
-func morder(objetivo):
+func ir_al_hormiguero(delta:float):
+	#var Hormigueros : Array[Node] = buscar_nodos_en_grupo("Hormiguero")
+	var hormiguero = buscar_nodo("Hormiguero")
+	objetivo_actual = hormiguero
+	if objetivo_actual == null:
+		return
+	var distancia = global_position.distance_to(objetivo_actual.global_position)
+	if distancia <= margen_llegada:
+		en_objetivo = true
+		return
+	mover_a(objetivo_actual.global_position, delta)
+	
+
+func atacar(delta: float) -> bool:
+	if not is_instance_valid(objetivo_actual):
+		return true # Terminó de atacar (el enemigo ya no existe)
+
+	var posicion_enemigo: Vector2 = objetivo_actual.global_position
+	var distancia := global_position.distance_to(posicion_enemigo)
+
+	if distancia > rango_ataque:
+		mover_a(posicion_enemigo, delta)
+		return false # Sigue persiguiendo
+
+	morder(objetivo_actual)
+	return true # Ya mordió -> terminó el ataque
+
+
+func morder(objetivo) -> void:
 	if objetivo is Enemigo:
 		objetivo.despawnear()
-		objetivo = null
+		objetivo_actual = null
 
+
+func preparar_ir_al_hormiguero() -> void:
+	en_objetivo = false
+	objetivo_actual = buscar_nodo("Hormiguero")
+
+
+func reiniciar_patrulla() -> void:
+	paso_patrulla_actual = 0
+	en_objetivo = false
 	

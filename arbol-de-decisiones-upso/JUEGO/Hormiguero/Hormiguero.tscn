@@ -124,7 +124,7 @@ texture = ExtResource("2_24d5w")
 [sub_resource type="TileSet" id="TileSet_u0ya7"]
 sources/0 = SubResource("TileSetAtlasSource_tlyfb")
 
-[node name="Hormiguero" type="Node2D" unique_id=1780764350]
+[node name="Hormiguero" type="Node2D" unique_id=1780764350 groups=["Hormiguero"]]
 script = ExtResource("1_cabha")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2075242775]

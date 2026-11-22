@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://d26m3liryj6k8"]
+
+[ext_resource type="Script" uid="uid://qtjuqmcl7aq1" path="res://JUEGO/Escenas/spawner.gd" id="1_vxjfu"]
+[ext_resource type="PackedScene" uid="uid://3hyv43m0evvx" path="res://JUEGO/NPCs/TSCNs/HormigaObrera.tscn" id="2_d86bu"]
+[ext_resource type="PackedScene" uid="uid://q2judyjew8as" path="res://JUEGO/NPCs/TSCNs/hormiga_exploradora.tscn" id="3_hguwc"]
+[ext_resource type="PackedScene" uid="uid://ehmcgy6b8icr" path="res://JUEGO/NPCs/TSCNs/hormiga_guerrera.tscn" id="4_paowo"]
+[ext_resource type="PackedScene" uid="uid://c8mcv0aa28cuk" path="res://JUEGO/Objetos/Comida.tscn" id="5_pf28r"]
+[ext_resource type="PackedScene" uid="uid://d2knbsd43y2j3" path="res://JUEGO/Objetos/Basura.tscn" id="6_xjp3j"]
+[ext_resource type="PackedScene" uid="uid://coigrdb8wjonv" path="res://JUEGO/NPCs/TSCNs/Enemigo.tscn" id="7_deyrx"]
+
+[node name="Spawner" type="Node2D" unique_id=814081416]
+script = ExtResource("1_vxjfu")
+Obrera = ExtResource("2_d86bu")
+Exploradora = ExtResource("3_hguwc")
+Guerrera = ExtResource("4_paowo")
+comida = ExtResource("5_pf28r")
+basura = ExtResource("6_xjp3j")
+enemigo = ExtResource("7_deyrx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1709203940]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=818465267]
+offset_left = 874.0
+offset_top = 503.0
+offset_right = 1124.0
+offset_bottom = 631.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer" unique_id=813564818]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=1671032336]
+layout_mode = 2
+text = "Spawn Hormigas"
+
+[node name="Button" type="Button" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=323639191]
+layout_mode = 2
+text = "Obrera"
+
+[node name="Button2" type="Button" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=825167312]
+layout_mode = 2
+text = "Exploradora"
+
+[node name="Button3" type="Button" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=322309570]
+layout_mode = 2
+text = "Guerrera"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/HBoxContainer" unique_id=837456978]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/VBoxContainer2" unique_id=1250359657]
+layout_mode = 2
+text = "Spawn Objetos"
+
+[node name="CheckButton" type="CheckButton" parent="CanvasLayer/HBoxContainer/VBoxContainer2" unique_id=1771750182]
+layout_mode = 2
+text = "Comida"
+
+[node name="CheckButton2" type="CheckButton" parent="CanvasLayer/HBoxContainer/VBoxContainer2" unique_id=1313818047]
+layout_mode = 2
+text = "Basura"
+
+[node name="CheckButton3" type="CheckButton" parent="CanvasLayer/HBoxContainer/VBoxContainer2" unique_id=1307949024]
+layout_mode = 2
+text = "Enemigo"
+
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
