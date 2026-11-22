@@ -12,5 +12,6 @@ func setear_sprite(n:int):
 
 func consumir(quita:int):
 	resistencia -=quita
+	$ParticulasConsumicion.restart()
 	if resistencia <= 0:
 		queue_free()

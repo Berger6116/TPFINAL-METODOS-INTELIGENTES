@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cy7virxhwvxb1" path="res://ai/tasks/cambiardireccionA.gd" id="4_xr4qd"]
 [ext_resource type="Script" uid="uid://cb857p3egqpa0" path="res://ai/tasks/acercarseaobjeto.gd" id="5_xr4qd"]
 [ext_resource type="Script" uid="uid://burpq3d150rp6" path="res://ai/tasks/procesarobjetoexploradora.gd" id="6_in2it"]
+[ext_resource type="Script" uid="uid://cfarlsko6mwii" path="res://ai/tasks/consumirbasura.gd" id="7_mggax"]
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_dn0bh"]
 
@@ -35,11 +36,57 @@ distancia_minima = 30.0
 [sub_resource type="BTAction" id="BTAction_0w57w"]
 script = ExtResource("6_in2it")
 
+[sub_resource type="BBVariant" id="BBVariant_in2it"]
+type = 4
+saved_value = "Comida"
+resource_name = "Comida"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_mggax"]
+variable = &"tipo_objeto"
+value = SubResource("BBVariant_in2it")
+
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_7itrj"]
+text = "Buscando camino al hormiguero desde la comida"
+
 [sub_resource type="BTWait" id="BTWait_in2it"]
-duration = 10.0
+duration = 2.0
+
+[sub_resource type="BTSequence" id="BTSequence_hvmva"]
+custom_name = " SequenceComida"
+children = [SubResource("BTCheckVar_mggax"), SubResource("BTConsolePrint_7itrj"), SubResource("BTWait_in2it")]
+
+[sub_resource type="BBVariant" id="BBVariant_mggax"]
+type = 4
+saved_value = "Basura"
+resource_name = "Basura"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_0m34b"]
+variable = &"tipo_objeto"
+value = SubResource("BBVariant_mggax")
+
+[sub_resource type="BTWait" id="BTWait_7itrj"]
+duration = 0.5
+
+[sub_resource type="BTAction" id="BTAction_0m34b"]
+script = ExtResource("7_mggax")
+
+[sub_resource type="BTSequence" id="BTSequence_k4ccf"]
+children = [SubResource("BTWait_7itrj"), SubResource("BTAction_0m34b")]
+
+[sub_resource type="BTRepeat" id="BTRepeat_d1ig4"]
+times = 64
+abort_on_failure = true
+children = [SubResource("BTSequence_k4ccf")]
+
+[sub_resource type="BTSequence" id="BTSequence_d1ig4"]
+custom_name = "SequenceBasura"
+children = [SubResource("BTCheckVar_0m34b"), SubResource("BTRepeat_d1ig4")]
+
+[sub_resource type="BTSelector" id="BTSelector_cx5q1"]
+children = [SubResource("BTSequence_hvmva"), SubResource("BTSequence_d1ig4")]
 
 [sub_resource type="BTSequence" id="BTSequence_0w57w"]
-children = [SubResource("BTAction_7itrj"), SubResource("BTAction_hvmva"), SubResource("BTAction_0w57w"), SubResource("BTWait_in2it")]
+children = [SubResource("BTAction_7itrj"), SubResource("BTAction_hvmva"), SubResource("BTAction_0w57w"), SubResource("BTSelector_cx5q1")]
 
 [sub_resource type="BTAction" id="BTAction_lxy5a"]
 script = ExtResource("1_4cmsc")
