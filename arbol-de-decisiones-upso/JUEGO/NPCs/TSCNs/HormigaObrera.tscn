@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://3hyv43m0evvx"]
 
-[ext_resource type="Script" uid="uid://cxggmiq4u22dl" path="res://JUEGO/hormiga_obrera.gd" id="1_o36mh"]
+[ext_resource type="Script" uid="uid://cxggmiq4u22dl" path="res://JUEGO/NPCs/Scripts/hormiga_obrera.gd" id="1_o36mh"]
 [ext_resource type="Texture2D" uid="uid://bcsb5wmf7ajjo" path="res://JUEGO/Recursos/NPCs/Ants.png" id="2_o36mh"]
 [ext_resource type="BehaviorTree" uid="uid://bv52iukj7sbrr" path="res://JUEGO/arbol_obrera.tres" id="3_o36mh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8pb8h"]
+font_size = 40
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_cuc60"]
 
@@ -17,6 +20,7 @@ offset_right = 13.0
 offset_bottom = -102.0
 text = "Soy Hormigua Obrera
 "
+label_settings = SubResource("LabelSettings_8pb8h")
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1792166091]
