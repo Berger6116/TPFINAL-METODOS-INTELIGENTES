@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cx5xot1mhrkh8" path="res://JUEGO/Recursos/Taiga/taiga_.png" id="1_877it"]
 [ext_resource type="Texture2D" uid="uid://ccgk6qph8l3c2" path="res://JUEGO/Recursos/Garden_Planters/Garden_Planters_RubberTire.png" id="2_50ep6"]
 [ext_resource type="PackedScene" uid="uid://q2judyjew8as" path="res://JUEGO/NPCs/TSCNs/hormiga_exploradora.tscn" id="3_50ep6"]
-[ext_resource type="PackedScene" uid="uid://3hyv43m0evvx" path="res://JUEGO/HormigaObrera.tscn" id="4_ykmru"]
+[ext_resource type="PackedScene" uid="uid://3hyv43m0evvx" path="res://JUEGO/NPCs/TSCNs/HormigaObrera.tscn" id="4_ykmru"]
 [ext_resource type="PackedScene" uid="uid://c8mcv0aa28cuk" path="res://JUEGO/Objetos/Comida.tscn" id="5_1otkg"]
 [ext_resource type="PackedScene" uid="uid://d2knbsd43y2j3" path="res://JUEGO/Objetos/Basura.tscn" id="6_mw6f6"]
 [ext_resource type="PackedScene" uid="uid://ctgy5m8bvk0fa" path="res://JUEGO/Hormiguero/Hormiguero.tscn" id="7_nm0nk"]

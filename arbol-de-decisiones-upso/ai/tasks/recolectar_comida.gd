@@ -1,5 +1,5 @@
 @tool
-extends BTCondition
+extends BTAction
 
-func _tick(_delta: float) -> Status:
-	return SUCCESS if agent.hay_comida() else FAILURE
+func _tick(delta: float) -> Status:
+	return SUCCESS if agent.ir_a_comida(delta) else RUNNING

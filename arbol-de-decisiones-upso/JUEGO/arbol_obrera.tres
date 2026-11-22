@@ -23,11 +23,11 @@ children = [SubResource("BTCondition_vhx3i"), SubResource("BTAction_6f768"), Sub
 [sub_resource type="BTCondition" id="BTCondition_gbja5"]
 script = ExtResource("1_vhx3i")
 
-[sub_resource type="BTCondition" id="BTCondition_yopho"]
+[sub_resource type="BTAction" id="BTAction_gbja5"]
 script = ExtResource("1_6f768")
 
 [sub_resource type="BTSequence" id="BTSequence_l488r"]
-children = [SubResource("BTCondition_gbja5"), SubResource("BTCondition_yopho")]
+children = [SubResource("BTCondition_gbja5"), SubResource("BTAction_gbja5")]
 
 [sub_resource type="BTAction" id="BTAction_dosio"]
 script = ExtResource("1_i4w28")
