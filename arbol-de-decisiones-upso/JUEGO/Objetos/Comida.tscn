@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c8mcv0aa28cuk"]
+
+[ext_resource type="Script" uid="uid://cn2dj1qrbfdwq" path="res://JUEGO/Objetos/comida.gd" id="1_pilnb"]
+[ext_resource type="Texture2D" uid="uid://ceb5h6o4fhofd" path="res://JUEGO/Recursos/Garden_Planters/Garden_Planters_16x16Icons.png" id="1_uc6bx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0ya7"]
+
+[node name="Comida" type="Node2D" unique_id=1084008944]
+scale = Vector2(2, 2)
+script = ExtResource("1_pilnb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1507948424]
+texture = ExtResource("1_uc6bx")
+hframes = 8
+vframes = 10
+
+[node name="Area2D" type="Area2D" parent="." unique_id=87074377]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1550164515]
+scale = Vector2(0.9, 0.9)
+shape = SubResource("RectangleShape2D_u0ya7")
