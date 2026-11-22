@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://3hyv43m0evvx"]
 
-[ext_resource type="Script" uid="uid://choq0nod03flf" path="res://JUEGO/npc_base.gd" id="1_o36mh"]
+[ext_resource type="Script" uid="uid://cxggmiq4u22dl" path="res://JUEGO/hormiga_obrera.gd" id="1_o36mh"]
 [ext_resource type="Texture2D" uid="uid://dwxavr3655lja" path="res://icon.svg" id="2_oa7ix"]
 [ext_resource type="BehaviorTree" uid="uid://bv52iukj7sbrr" path="res://JUEGO/arbol_obrera.tres" id="3_o36mh"]
 
@@ -14,7 +14,8 @@ offset_left = -27.0
 offset_top = -125.0
 offset_right = 13.0
 offset_bottom = -102.0
-text = "Hola"
+text = "Soy Hormigua Obrera
+"
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1792166091]
