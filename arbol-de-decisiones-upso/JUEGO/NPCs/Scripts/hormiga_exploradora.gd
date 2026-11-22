@@ -28,6 +28,7 @@ var tiempo_espera_obstaculo: float = 2.0
 
 func _ready() -> void:
 	tiempo_cambio_restante = randf_range(tiempo_minimo_cambio, tiempo_maximo_cambio)
+	hormiguero_actual = get_tree().current_scene.find_child("Hormiguero",true,false)
 
 
 #region Movimiento
@@ -67,6 +68,7 @@ func cambiar_direccion_a(nueva_direccion: Vector2) -> void:
 	direccion_actual = nueva_direccion.normalized()
 	rotation = direccion_actual.angle() - Vector2.DOWN.angle()
 	tiempo_cambio_restante = randf_range(tiempo_minimo_cambio, tiempo_maximo_cambio)
+#endregion
 
 func encontrar_algo(cosa) -> void:
 	#Al encontrar algo en su área de visión se fija que es y duevuelve el tipo.
@@ -87,17 +89,15 @@ func buscar_camino_al_hormiguero() -> bool:
 	return false
 
 func comprobar_cercania_al_hormiguero() -> Array:
-	var hormiguero_actual = get_tree().current_scene.find_child("Hormiguero",true,false)
-	if hormiguero_actual !=null:
-		var distancia_maxima = hormiguero_actual.limite_del_hormiguero
-		var ubicacion_del_hormiguero = hormiguero_actual.position
-		if distancia_maxima > self.position:
-		#if distancia maxima es mayor o igual a la distancia actual
-			return [true,ubicacion_del_hormiguero]
-		else:
-			return [false,ubicacion_del_hormiguero]
-	else:
-		return [false]
+	#Se fija si la hormiga está dentro del área de influencia del hormiguero.
+	if is_instance_valid(hormiguero_actual):
+		var distancia_maxima: float = hormiguero_actual.limite_region
+		ubicacion_hormiguero = hormiguero_actual.global_position
+		var distancia_actual: float = global_position.distance_to(ubicacion_hormiguero)
+
+		return [distancia_actual <= distancia_maxima, ubicacion_hormiguero]
+
+	return [false, Vector2.ZERO]
 
 #func ir_al_hormiguero(ubicacion_hormiguero) -> Path2D:
 	#Crea el path al hasta el hormiguero comprobando los obstaculos y deja el path creado vinculado al hormiguero para que luego lo sigan las obreras.

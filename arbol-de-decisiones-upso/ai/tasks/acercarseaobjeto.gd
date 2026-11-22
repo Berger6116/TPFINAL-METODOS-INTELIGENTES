@@ -11,7 +11,6 @@ func _tick(_delta: float) -> Status:
 
 	var direccion = (objeto.global_position - agent.global_position).normalized()
 	var distancia = agent.global_position.distance_to(objeto.global_position)
-	print("Distancia: ", distancia, " | Posición hormiga: ", agent.global_position, " | Posición objeto: ", objeto.global_position)
 	if distancia <= distancia_minima:
 		return SUCCESS
 
