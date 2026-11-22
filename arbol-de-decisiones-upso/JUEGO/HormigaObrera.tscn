@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://jjr41fmb262"]
 
-[ext_resource type="Script" path="res://JUEGO/hormiga_obrera.gd" id="1_o36mh"]
+[ext_resource type="Script" uid="uid://dlifqsfhac4c2" path="res://JUEGO/hormiga_obrera.gd" id="1_o36mh"]
 [ext_resource type="Texture2D" uid="uid://dwxavr3655lja" path="res://icon.svg" id="2_oa7ix"]
 [ext_resource type="BehaviorTree" uid="uid://bv52iukj7sbrr" path="res://JUEGO/arbol_obrera.tres" id="3_o36mh"]
 
