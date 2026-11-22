@@ -16,6 +16,4 @@ func _tick(_delta: float) -> Status:
 
 	objeto.consumir(cantidad_consumida)
 
-	print("Consumiendo basura. Resistencia restante: ", objeto.resistencia)
-
 	return SUCCESS
