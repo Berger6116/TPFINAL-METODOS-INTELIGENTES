@@ -2,18 +2,42 @@
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_cuiuy"]
 
+[sub_resource type="BTWait" id="BTWait_cuiuy"]
+duration = 2.0
+
+[sub_resource type="BBNode" id="BBNode_i4w28"]
+saved_value = NodePath(".")
+resource_name = "."
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_vhx3i"]
+node = SubResource("BBNode_i4w28")
+method = &"huir"
+
+[sub_resource type="BTWait" id="BTWait_6f768"]
+duration = 2.0
+
+[sub_resource type="BBNode" id="BBNode_cu6aj"]
+saved_value = NodePath(".")
+resource_name = "."
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_gbja5"]
+node = SubResource("BBNode_cu6aj")
+method = &"recolectar"
+
+[sub_resource type="BTWait" id="BTWait_i4w28"]
+duration = 2.0
+
+[sub_resource type="BBNode" id="BBNode_vhx3i"]
+saved_value = NodePath(".")
+resource_name = "."
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_6f768"]
+node = SubResource("BBNode_vhx3i")
+method = &"construir"
+
 [sub_resource type="BTSequence" id="BTSequence_cuiuy"]
-custom_name = "Huir"
-
-[sub_resource type="BTSequence" id="BTSequence_i4w28"]
-custom_name = "Recolectar"
-
-[sub_resource type="BTSequence" id="BTSequence_vhx3i"]
-custom_name = "Construir"
-
-[sub_resource type="BTSelector" id="BTSelector_6f768"]
-children = [SubResource("BTSequence_cuiuy"), SubResource("BTSequence_i4w28"), SubResource("BTSequence_vhx3i")]
+children = [SubResource("BTWait_cuiuy"), SubResource("BTCallMethod_vhx3i"), SubResource("BTWait_6f768"), SubResource("BTCallMethod_gbja5"), SubResource("BTWait_i4w28"), SubResource("BTCallMethod_6f768")]
 
 [resource]
 blackboard_plan = SubResource("BlackboardPlan_cuiuy")
-root_task = SubResource("BTSelector_6f768")
+root_task = SubResource("BTSequence_cuiuy")
