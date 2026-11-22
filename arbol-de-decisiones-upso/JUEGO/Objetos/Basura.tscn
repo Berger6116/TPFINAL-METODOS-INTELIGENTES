@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://d2knbsd43y2j3"]
+
+[ext_resource type="Texture2D" uid="uid://bswxkhlt5povq" path="res://JUEGO/Recursos/ObjetosRandom/retro_bathroom_set_withshadow.png" id="1_hssdn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xh5gp"]
+
+[node name="Basura" type="Node2D" unique_id=1850338114]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=214511452]
+texture = ExtResource("1_hssdn")
+hframes = 28
+vframes = 20
+frame = 539
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1088125395]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1057961190]
+scale = Vector2(0.9, 0.9)
+shape = SubResource("RectangleShape2D_xh5gp")
