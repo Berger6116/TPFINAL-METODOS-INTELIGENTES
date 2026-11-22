@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ccgk6qph8l3c2" path="res://JUEGO/Recursos/Garden_Planters/Garden_Planters_RubberTire.png" id="2_50ep6"]
 [ext_resource type="PackedScene" uid="uid://q2judyjew8as" path="res://JUEGO/NPCs/TSCNs/hormiga_exploradora.tscn" id="3_50ep6"]
 [ext_resource type="PackedScene" uid="uid://3hyv43m0evvx" path="res://JUEGO/HormigaObrera.tscn" id="4_ykmru"]
+[ext_resource type="PackedScene" uid="uid://c8mcv0aa28cuk" path="res://JUEGO/Objetos/Comida.tscn" id="5_1otkg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ykmru"]
 texture = ExtResource("1_877it")
@@ -458,3 +459,6 @@ tile_set = SubResource("TileSet_u0ya7")
 
 [node name="HormigaObrera" parent="." unique_id=693006371 instance=ExtResource("4_ykmru")]
 position = Vector2(831, 199)
+
+[node name="Comida" parent="." unique_id=1084008944 instance=ExtResource("5_1otkg")]
+position = Vector2(278, 310)
