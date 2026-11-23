@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ArbolDeDecisiones_UPSO"
-run/main_scene="uid://dqimp14v5dm6l"
+run/main_scene="uid://naqm1tnrfh3y"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
