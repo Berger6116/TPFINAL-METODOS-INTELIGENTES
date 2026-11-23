@@ -24,11 +24,8 @@ children = [SubResource("BTCondition_iqwlq"), SubResource("BTAction_5vyqr"), Sub
 [sub_resource type="BTAction" id="BTAction_7s468"]
 script = ExtResource("1_3pjoy")
 
-[sub_resource type="BTWait" id="BTWait_snypl"]
-duration = 0.3
-
 [sub_resource type="BTSequence" id="BTSequence_ggqm8"]
-children = [SubResource("BTAction_7s468"), SubResource("BTWait_snypl")]
+children = [SubResource("BTAction_7s468")]
 
 [sub_resource type="BTDynamicSelector" id="BTDynamicSelector_7s468"]
 children = [SubResource("BTSequence_7s468"), SubResource("BTSequence_ggqm8")]

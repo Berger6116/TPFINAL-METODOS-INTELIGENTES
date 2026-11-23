@@ -2,10 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://cx5xot1mhrkh8" path="res://JUEGO/Recursos/Taiga/taiga_.png" id="1_tbpfo"]
 [ext_resource type="Texture2D" uid="uid://ccgk6qph8l3c2" path="res://JUEGO/Recursos/Garden_Planters/Garden_Planters_RubberTire.png" id="2_7y51c"]
-[ext_resource type="PackedScene" uid="uid://ehmcgy6b8icr" path="res://JUEGO/NPCs/TSCNs/hormiga_guerrera.tscn" id="3_7cvvm"]
 [ext_resource type="PackedScene" uid="uid://cw7bgrcbd5a1c" path="res://JUEGO/NPCs/TSCNs/PuntoPatrulla.tscn" id="4_c75vu"]
-[ext_resource type="PackedScene" uid="uid://coigrdb8wjonv" path="res://JUEGO/NPCs/TSCNs/Enemigo.tscn" id="5_c75vu"]
 [ext_resource type="PackedScene" uid="uid://ctgy5m8bvk0fa" path="res://JUEGO/Hormiguero/Hormiguero.tscn" id="6_odjb3"]
+[ext_resource type="PackedScene" uid="uid://d26m3liryj6k8" path="res://JUEGO/Escenas/spawner.tscn" id="7_j08vg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7cvvm"]
 texture = ExtResource("1_tbpfo")
@@ -457,41 +456,76 @@ tile_map_data = PackedByteArray("AAABAAAAAAAMAAAAAAABAAEAAAAMAAEAAAACAAAAAAANAAA
 tile_set = SubResource("TileSet_j08vg")
 metadata/_edit_lock_ = true
 
-[node name="HormigaGuerrera" parent="." unique_id=1499434555 instance=ExtResource("3_7cvvm")]
-position = Vector2(152, 136)
-velocidad = 100.0
-
 [node name="PuntoPatrulla" parent="." unique_id=1917114213 instance=ExtResource("4_c75vu")]
-position = Vector2(1010, 80)
+position = Vector2(553, 109)
 Paso = 2
 
 [node name="PuntoPatrulla4" parent="." unique_id=2069304304 instance=ExtResource("4_c75vu")]
-position = Vector2(597, 440)
+position = Vector2(883, 113)
 Paso = 4
 
-[node name="PuntoPatrulla6" parent="." unique_id=882293854 instance=ExtResource("4_c75vu")]
-position = Vector2(138, 561)
+[node name="PuntoPatrulla8" parent="." unique_id=248142661 instance=ExtResource("4_c75vu")]
+position = Vector2(721, 307)
 Paso = 5
 
+[node name="PuntoPatrulla9" parent="." unique_id=1330672779 instance=ExtResource("4_c75vu")]
+position = Vector2(994, 226)
+Paso = 6
+
+[node name="PuntoPatrulla10" parent="." unique_id=1714127507 instance=ExtResource("4_c75vu")]
+position = Vector2(999, 364)
+Paso = 7
+
+[node name="PuntoPatrulla11" parent="." unique_id=1656615344 instance=ExtResource("4_c75vu")]
+position = Vector2(949, 492)
+Paso = 8
+
+[node name="PuntoPatrulla12" parent="." unique_id=1733067243 instance=ExtResource("4_c75vu")]
+position = Vector2(795, 520)
+Paso = 9
+
+[node name="PuntoPatrulla13" parent="." unique_id=364659490 instance=ExtResource("4_c75vu")]
+position = Vector2(603, 527)
+Paso = 10
+
+[node name="PuntoPatrulla14" parent="." unique_id=1853081645 instance=ExtResource("4_c75vu")]
+position = Vector2(423, 314)
+Paso = 11
+
+[node name="PuntoPatrulla15" parent="." unique_id=1349931498 instance=ExtResource("4_c75vu")]
+position = Vector2(443, 529)
+Paso = 12
+
+[node name="PuntoPatrulla16" parent="." unique_id=719789240 instance=ExtResource("4_c75vu")]
+position = Vector2(295, 513)
+Paso = 13
+
+[node name="PuntoPatrulla17" parent="." unique_id=762295052 instance=ExtResource("4_c75vu")]
+position = Vector2(157, 464)
+Paso = 14
+
+[node name="PuntoPatrulla18" parent="." unique_id=1324882122 instance=ExtResource("4_c75vu")]
+position = Vector2(179, 317)
+Paso = 15
+
+[node name="PuntoPatrulla19" parent="." unique_id=247118606 instance=ExtResource("4_c75vu")]
+position = Vector2(121, 216)
+Paso = 16
+
 [node name="PuntoPatrulla5" parent="." unique_id=137293402 instance=ExtResource("4_c75vu")]
-position = Vector2(1025, 537)
+position = Vector2(725, 104)
 Paso = 3
 
 [node name="PuntoPatrulla3" parent="." unique_id=768817031 instance=ExtResource("4_c75vu")]
-position = Vector2(302, 72)
+position = Vector2(294, 89)
 
 [node name="PuntoPatrulla2" parent="." unique_id=1183209428 instance=ExtResource("4_c75vu")]
-position = Vector2(586, 224)
+position = Vector2(405, 93)
 Paso = 1
-
-[node name="Enemigo" parent="." unique_id=542202064 instance=ExtResource("5_c75vu")]
-position = Vector2(739, 254)
-
-[node name="Enemigo3" parent="." unique_id=1869792052 instance=ExtResource("5_c75vu")]
-position = Vector2(918, 156)
-
-[node name="Enemigo2" parent="." unique_id=1033526294 instance=ExtResource("5_c75vu")]
-position = Vector2(341, 256)
 
 [node name="Hormiguero" parent="." unique_id=1780764350 instance=ExtResource("6_odjb3")]
 position = Vector2(148, 128)
+
+[node name="Spawner" parent="." unique_id=235508823 node_paths=PackedStringArray("Hormiguero") instance=ExtResource("7_j08vg")]
+Hormiguero = NodePath("../Hormiguero")
+metadata/_edit_lock_ = true
