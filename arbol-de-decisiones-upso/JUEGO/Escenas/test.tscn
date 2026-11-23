@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cx5xot1mhrkh8" path="res://JUEGO/Recursos/Taiga/taiga_.png" id="1_tbpfo"]
 [ext_resource type="Texture2D" uid="uid://ccgk6qph8l3c2" path="res://JUEGO/Recursos/Garden_Planters/Garden_Planters_RubberTire.png" id="2_7y51c"]
 [ext_resource type="PackedScene" uid="uid://cw7bgrcbd5a1c" path="res://JUEGO/NPCs/TSCNs/PuntoPatrulla.tscn" id="4_c75vu"]
+[ext_resource type="Script" uid="uid://c662h7srbqepg" path="res://JUEGO/NPCs/Scripts/calculador_de_caminos.gd" id="6_j08vg"]
 [ext_resource type="PackedScene" uid="uid://ctgy5m8bvk0fa" path="res://JUEGO/Hormiguero/Hormiguero.tscn" id="6_odjb3"]
 [ext_resource type="PackedScene" uid="uid://d26m3liryj6k8" path="res://JUEGO/Escenas/spawner.tscn" id="7_j08vg"]
 
@@ -529,3 +530,8 @@ position = Vector2(148, 128)
 [node name="Spawner" parent="." unique_id=235508823 node_paths=PackedStringArray("Hormiguero") instance=ExtResource("7_j08vg")]
 Hormiguero = NodePath("../Hormiguero")
 metadata/_edit_lock_ = true
+
+[node name="CalculadorCaminos" type="Node2D" parent="." unique_id=1026948699 node_paths=PackedStringArray("capa_mapa")]
+script = ExtResource("6_j08vg")
+capa_mapa = NodePath("../TileMapLayer")
+metadata/_custom_type_script = "uid://c662h7srbqepg"

@@ -58,9 +58,7 @@ func hay_comida() -> bool:
 		return false
 	if llevando_comida:
 		return true
-	if not obtener_ruta_valida().is_empty():
-		return true
-	return buscar_comida_suelta() != null
+	return not obtener_ruta_valida().is_empty()
 
 func mover_hacia(destino: Vector2, delta: float) -> bool:
 	var dir := global_position.direction_to(destino)
@@ -82,10 +80,12 @@ func ir_a_comida(delta: float) -> bool:
 					ruta_actual.reverse()
 				indice_punto = 0
 				print(\"Obrera: ¡Siguiendo ruta de feromonas!\")
-			else:
-				comida_objetivo = buscar_comida_suelta()
-				if comida_objetivo == null:
-					return true
+			if ruta.is_empty():
+				return true
+			#else:
+				#comida_objetivo = buscar_comida_suelta()
+				#if comida_objetivo == null:
+					#return true
 
 		if not ruta_actual.is_empty() and indice_punto < ruta_actual.size():
 			estado_label.text = \"Siguiendo feromonas...\"
@@ -121,6 +121,9 @@ func ir_a_comida(delta: float) -> bool:
 
 	# Entregó la comida -> activa el contador de 2 segundos para construir
 	if is_instance_valid(comida_en_mano):
+		if hormiguero != null:
+			hormiguero.eliminar_ruta_comida(comida_en_mano)
+
 		comida_en_mano.queue_free()
 	if hormiguero != null and \"comida\" in hormiguero:
 		hormiguero.comida += 10

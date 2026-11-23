@@ -8,7 +8,7 @@ func _tick(delta: float) -> Status:
 		return FAILURE
 
 	# Obtener el calculador desde Mundo.
-	var calculador = agent.get_parent().get_node_or_null("CalculadorCaminos")
+	var calculador = agent.get_tree().current_scene.get_node_or_null("CalculadorCaminos")
 
 	if calculador == null:
 		return FAILURE
